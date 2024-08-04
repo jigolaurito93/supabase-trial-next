@@ -1,3 +1,4 @@
+import SubmitButton from "@/components/submit-button";
 import { login } from "@/lib/actions";
 import React from "react";
 
@@ -10,9 +11,7 @@ const LoginForm = () => {
         placeholder="email@email.com"
         name="emailAddress"
       />
-      <button className="border rounded-md py-1 px-4 mt-8 w-full bg-white text-black">
-        Sign in with Email
-      </button>
+      <SubmitButton />
     </form>
   );
 };
