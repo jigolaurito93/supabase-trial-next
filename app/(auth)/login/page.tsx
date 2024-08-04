@@ -1,4 +1,5 @@
 import React from "react";
+import LoginForm from "../components/login-form";
 
 const Page = () => {
   return (
@@ -10,7 +11,7 @@ const Page = () => {
           required
         </p>
       </div>
-      <div className="text-white">Form Goes HEre</div>
+      <LoginForm />
     </div>
   );
 };

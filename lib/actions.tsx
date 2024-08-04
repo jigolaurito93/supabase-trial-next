@@ -10,3 +10,7 @@ export async function addUser(formData: {}) {
   }
   revalidatePath("/dashboard");
 }
+
+export async function login(formData: {}) {
+  console.log(formData);
+}
