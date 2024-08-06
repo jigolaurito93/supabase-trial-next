@@ -11,6 +11,31 @@ export async function addUser(formData: {}) {
   revalidatePath("/dashboard");
 }
 
-export async function login(formData: {}) {
-  console.log(formData);
+interface PrevStateProp {
+  message: string;
+  error: boolean;
+}
+
+export async function login(prevState: PrevStateProp, formData: FormData) {
+  const supabase = createClient();
+  const email = formData.get("emailAddress");
+
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: {
+      shouldCreateUser: true,
+    },
+  });
+
+  if (error) {
+    return {
+      message: "Authentication error",
+      error: true,
+    };
+  }
+
+  return {
+    message: `Check your email at ${email}`,
+    error: false,
+  };
 }

@@ -1,5 +1,5 @@
 "use client";
-import { Divide, Loader } from "lucide-react";
+import { Loader } from "lucide-react";
 import React from "react";
 import { useFormStatus } from "react-dom";
 
